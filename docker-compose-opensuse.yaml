@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  opensuse:
+    container_name: 'dev.opensuse'
+    build:
+      context: .
+      dockerfile: ./opensuse.Dockerfile
+    volumes:
+    - /Users/gmerkushev/workspace:/workspace
+    command: "tail -f /dev/null"
+
+

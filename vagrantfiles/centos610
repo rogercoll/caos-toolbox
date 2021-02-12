@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/centos-6.10"
+  config.vm.define "centos610"
+  config.vm.hostname = "centos610"
+  config.vm.provider :virtualbox do |vb|
+      vb.name = "centos610"
+  end
+end

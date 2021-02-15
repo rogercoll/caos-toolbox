@@ -6,7 +6,7 @@ VAGRANT_CMD = $(word 2, $(subst /, , $(@)))
 up/%: export VAGRANT_VAGRANTFILE=$(CURDIR)/vagrantfiles/$(VAGRANT_CMD)
 up/%:
 	@echo "up vm: $(VAGRANT_CMD)"
-	@vagrant up $(VAGRANT_CMD)
+	@ansible-playbook ansible/create-vm.yaml --extra-vars "target=$(VAGRANT_CMD)"
 
 .PHONY: ssh/%
 

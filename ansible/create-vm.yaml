@@ -1,0 +1,19 @@
+---
+- name: Provosion new box
+  hosts: local
+  vars:
+    target: "{{ target | default('none') }}"
+    vagrant_os: "{{ hostvars[target ].vagrant_os }}"
+    hostname: "{{ hostvars[target].hostname }}"
+    host_ip: "{{ hostvars[target].ansible_host }}"
+  tasks:
+    - name: Clean from old runs
+      file:
+        path: "{{ playbook_dir }}/../Vagrantfile"
+        state: absent
+    - name: Prepare vagrant file
+      template:
+        src: "{{ playbook_dir }}/vagrantfile.template"
+        dest: "{{ playbook_dir }}/../Vagrantfile"
+    - name: Provision VM
+      shell: "vagrant up {{ target }}"

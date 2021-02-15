@@ -1,0 +1,6 @@
+---
+- name: Install agent
+  hosts: "centos6"
+  tasks:
+    - name: Install agent
+      shell: echo "install agent"

@@ -1,0 +1,30 @@
+all:
+  hosts:
+
+    local:
+      ansible_connection: local
+
+    centos6:
+      vagrant_os: "bento/centos-6.10"
+      hostname: "centos6"
+      ansible_host: 10.0.2.20
+
+    centos7:
+      vagrant_os: "centos-7"
+      hostname: "centos7"
+      ansible_host: 10.0.2.21
+
+    centos8:
+      vagrant_os: "centos-8"
+      hostname: "centos8"
+      ansible_host: 10.0.2.22
+
+    ubuntu2004:
+      vagrant_os: "ubuntu/focal64"
+      hostname: "ubuntu2004"
+      ansible_host: 10.0.2.23
+
+    ubuntu2010:
+      vagrant_os: "ubuntu/groovy64"
+      hostname: "ubuntu2010"
+      ansible_host: 10.0.2.24

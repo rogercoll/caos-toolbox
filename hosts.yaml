@@ -19,12 +19,32 @@ all:
       hostname: "centos8"
       ansible_host: 10.0.2.22
 
+    ubuntu1404:
+      vagrant_os: "ubuntu/trusty64"
+      hostname: "ubuntu1404"
+      ansible_host: 10.0.2.23
+
+    ubuntu1604:
+      vagrant_os: "ubuntu/xenial64"
+      hostname: "ubuntu1604"
+      ansible_host: 10.0.2.24
+
+    ubuntu1804:
+      vagrant_os: "ubuntu/bionic64"
+      hostname: "ubuntu1804"
+      ansible_host: 10.0.2.25
+
     ubuntu2004:
       vagrant_os: "ubuntu/focal64"
       hostname: "ubuntu2004"
-      ansible_host: 10.0.2.23
+      ansible_host: 10.0.2.26
 
     ubuntu2010:
       vagrant_os: "ubuntu/groovy64"
       hostname: "ubuntu2010"
-      ansible_host: 10.0.2.24
+      ansible_host: 10.0.2.27
+
+    amazonlinux2:
+      vagrant_os: "bento/amazonlinux-2"
+      hostname: "amazonlinux2"
+      ansible_host: 10.0.2.28

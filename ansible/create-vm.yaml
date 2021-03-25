@@ -16,4 +16,4 @@
         src: "{{ playbook_dir }}/vagrantfile.template"
         dest: "{{ playbook_dir }}/../Vagrantfile"
     - name: Provision VM
-      shell: "vagrant up {{ target }}"
+      shell: "cd {{ playbook_dir }}/../ && vagrant up {{ target }}"

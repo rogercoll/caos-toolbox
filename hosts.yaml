@@ -48,3 +48,8 @@ all:
       vagrant_os: "bento/amazonlinux-2"
       hostname: "amazonlinux2"
       ansible_host: 10.0.2.28
+
+    sles12:
+      vagrant_os: "elastic/sles-12-x86_64"
+      hostname: "sles12"
+      ansible_host: 10.0.2.29

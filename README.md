@@ -32,3 +32,29 @@
 - make -> ansible role pointed to vagrantbox
 - make install/agent centos6.10 VERSION=1.15.1
 - make install/nri-nginx centos6.10 VERSION=1.15.1
+
+### Issues
+
+Ubuntu 18.04 and higher dns issues
+
+Add this into your `/etc/netplan/50-vagrant.yaml`
+
+```yaml
+nameservers:
+  addresses: [8.8.8.8, 8.8.4.4]
+```
+
+to make it look like this
+
+```yaml
+---
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s8:
+      addresses:
+      - 10.0.2.25/24
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+```

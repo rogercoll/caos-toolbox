@@ -10,12 +10,12 @@ all:
       ansible_host: 10.0.2.20
 
     centos7:
-      vagrant_os: "centos-7"
+      vagrant_os: "centos/7"
       hostname: "centos7"
       ansible_host: 10.0.2.21
 
     centos8:
-      vagrant_os: "centos-8"
+      vagrant_os: "centos/8"
       hostname: "centos8"
       ansible_host: 10.0.2.22
 

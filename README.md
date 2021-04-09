@@ -18,6 +18,7 @@
 - CentOS 8 `centos8`
 - Ubuntu 20.04 (focal) `ubuntu2004`
 - Ubuntu 20.10 (groovy) `ubuntu2010`
+- openSUSE 12 `sles12`
 
 ### How it works
 1. Makefile calls ansible playbook

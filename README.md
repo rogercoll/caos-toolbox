@@ -36,6 +36,8 @@
 
 ### Issues
 
+#### Ubuntu DNS
+
 Ubuntu 18.04 and higher dns issues
 
 Add this into your `/etc/netplan/50-vagrant.yaml`
@@ -59,3 +61,18 @@ network:
       nameservers:
         addresses: [8.8.8.8, 8.8.4.4]
 ```
+
+#### Virtual Box IP ranges
+
+By default, on Linux, Mac OS X and Solaris Oracle VM VirtualBox will only allow IP addresses in 192.68.56.0/21 range to be assigned to host-only adapters. If Vbox
+cannot work in 10.0.2.0/24 range, it might display the following error:
+
+```
+The IP address configured for the host-only network is not within the
+allowed ranges. Please update the address used to be within the allowed
+ranges and run the command again.
+```
+
+Add the following line in your `/etc/vbox/networks.conf`:
+
+`* 10.0.2.0/24`

@@ -3,6 +3,13 @@ Vagrant.configure("2") do |config|
   config.vm.define "{{ hostname }}"
   config.vm.hostname = "{{ hostname }}"
   config.vm.network "private_network", ip: "{{ host_ip }}"
+  config.vm.provision "setup", type:'ansible' do |ansible|
+    ansible.playbook = "ansible/provision/ubuntu.yml" 
+  end
+  config.vm.provision "go", type:'ansible' do |ansible|
+    ansible.playbook = "ansible/provision/go.yml" 
+  end
+  config.vm.synced_folder "/Users/rcoll/Documents/caos/nr-public", "/srv"
   config.vm.provider :virtualbox do |v|
       v.name = "{{ hostname }}"
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]

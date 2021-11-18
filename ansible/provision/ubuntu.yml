@@ -1,0 +1,18 @@
+- name: DNS failure in Ubuntu
+  hosts: all
+  become: true
+  tasks:
+    - name: Set DNS
+      command: 'netplan set "ethernets.enp0s8.nameservers.addresses=[8.8.8.8, 8.8.4.4]"'
+    
+    - name: Apply netplan
+      command: 'netplan apply'
+
+- name: Basic setting Ubuntu
+  hosts: all
+  become: true
+  tasks:
+    - name: Install build-essential
+      apt:
+        name: build-essential
+        state: present

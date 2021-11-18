@@ -2,6 +2,10 @@ VAGRANT_CMD = $(word 2, $(subst /, , $(@)))
 
 .PHONY: up/%
 
+init: ## Init Ansible roles
+	@echo "Downloading Ansible roles"
+	@ansible-galaxy install -r ansible/requirements.yml --roles-path ansible/provision/roles/
+
 up/%:
 	@echo "up vm: $(VAGRANT_CMD)"
 	@ansible-playbook ansible/create-vm.yaml --extra-vars "target=$(VAGRANT_CMD)"

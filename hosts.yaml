@@ -10,9 +10,11 @@ all:
       ansible_host: 10.0.2.20
 
     centos7:
-      vagrant_os: "centos/7"
+      vagrant_os: "geerlingguy/centos7"
       hostname: "centos7"
       ansible_host: 10.0.2.21
+      provisions:
+        - name: go
 
     centos8:
       vagrant_os: "centos/8"
@@ -38,6 +40,9 @@ all:
       vagrant_os: "ubuntu/focal64"
       hostname: "ubuntu2004"
       ansible_host: 10.0.2.26
+      provisions:
+        - name: dns
+        - name: go
 
     ubuntu2010:
       vagrant_os: "ubuntu/groovy64"

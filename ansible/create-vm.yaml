@@ -6,6 +6,7 @@
     vagrant_os: "{{ hostvars[target ].vagrant_os }}"
     hostname: "{{ hostvars[target].hostname }}"
     host_ip: "{{ hostvars[target].ansible_host }}"
+    provisions: "{{ hostvars[target].provisions }}"
   tasks:
     - name: Clean from old runs
       file:
